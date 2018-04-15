@@ -19,5 +19,7 @@ pass the paths of files to be printed through `stdin`. They will be printed as a
 ## TODO:
 
 . An ncurses interface similar to vim folds?
+
 . add some formatting options
+
 . for some reason, modules don't work properly if loaded from the repl . Integrate it with ranger
