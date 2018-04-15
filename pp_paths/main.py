@@ -11,6 +11,8 @@ def getIp():
     try:
         while True:
             ln=input()
+            if ln.strip() == '':
+                continue
             dirs=ln.split('/')
             paths.append(dirs)
     except Exception as e:

@@ -4,15 +4,20 @@ def toPath(lst):
         ret += p+'/'
     return ret
 
+def shortestListIn(lists):
+    ret=lists[0]
+    for l in lists[1:]:
+        if len(l) < len(ret):
+            ret = l
+    return ret
+
 def getCommonPrefix(paths):
     common=list()
-    fst=paths[0]
-    for i in range(len(fst)):
-        for p in paths[1:]:
-            if fst[i] == p[i] and i == len(fst)-1:
-                return toPath(fst[:i+1]), [ p[i+1:] for p in paths ]
-            if fst[i] != p[i]:
-                return toPath(fst[:i]), [ p[i:] for p in paths ]
+    pole = shortestListIn(paths)
+    for i in range(len(pole)):
+        for p in paths:
+            if pole[i] != p[i]:
+                return toPath(pole[:i]), [ p[i:] for p in paths ]
     return None
 
 class CHARS():

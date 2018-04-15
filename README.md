@@ -25,5 +25,3 @@ pass the paths of files to be printed through `stdin`. They will be printed as a
 . for some reason, modules don't work properly if loaded from the repl 
 
 . Integrate it with ranger
-
-. Fix some formatting bugs
