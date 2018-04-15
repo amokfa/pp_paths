@@ -6,7 +6,7 @@ def main():
             version='1.0.0',
             packages=find_packages(),
             entry_points={
-                'console_scripts': [ 'pp_paths = pp_paths:main' ]
+                'console_scripts': [ 'pp_paths = pp_paths.main:main' ]
                 },
             # scripts=['scripts/pp_paths']
             )

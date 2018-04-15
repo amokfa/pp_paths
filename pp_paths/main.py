@@ -2,8 +2,8 @@ import curses as cs
 import os
 import sys
 import argparse
-from .utils import *
-from .Tree import *
+from pp_paths.utils import *
+from pp_paths.Tree import *
 
 
 def getIp():

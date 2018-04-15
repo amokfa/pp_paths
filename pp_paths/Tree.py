@@ -1,4 +1,4 @@
-from .utils import *
+from pp_paths.utils import *
 
 class Node(object):
     def __init__(self, data):
