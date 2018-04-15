@@ -1,8 +1,8 @@
-#`pp_paths`: A python script to pretty print directory structures
+# `pp_paths`: A python script to pretty print directory structures
 
 pass the paths of files to be printed through `stdin`. They will be printed as a tree using ascii art.
 
-    > find b|python main.py
+    > find b|pp_paths
     base
     └─b
       ├─a
@@ -16,9 +16,8 @@ pass the paths of files to be printed through `stdin`. They will be printed as a
         └─y
         
         
-##TODO:
+## TODO:
 
-1. An ncurses interface similar to vim folds?
-2. make a package
-3. add some formatting options
-4. for some reason, modules don't work properly if loaded from the repl
+. An ncurses interface similar to vim folds?
+. add some formatting options
+. for some reason, modules don't work properly if loaded from the repl . Integrate it with ranger

@@ -2,8 +2,8 @@ import curses as cs
 import os
 import sys
 import argparse
-from utils import *
-from Tree import *
+from .utils import *
+from .Tree import *
 
 
 def getIp():
@@ -23,7 +23,8 @@ def runUi(tree):
 def prettyPrintTree(tree):
     print(tree.__str__())
 
-if __name__ == '__main__':
+
+def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('-b', '--base', action='store_true', help='print with a common base')
     # parser.add_argument('-d', '--dump', action='store_true', help='dump common prefix')
@@ -32,22 +33,10 @@ if __name__ == '__main__':
     trees=Tree('base', paths, args.base)
     for tree in trees:
         prettyPrintTree(tree)
-    # if parser.parse_args().print-only:
-    # else:
-    #     pass
-        # cs.wrapper(runUi, t)
 
 
-
-#     l=[['a', 'b'],
-#          ['a', 'c'],
-#          ['a', 'e'],
-#          ['a', 'q', 'w'],
-#          ['a', 'q', 'q'],
-#          ['a', 'z', 'a'],
-#          ['a', 'z', 'd']]
-#     t=Tree('base', l)
-#     print(t)
+if __name__ == '__main__':
+    main()
 
 
 
