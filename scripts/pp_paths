@@ -1,5 +1,0 @@
-#!/usr/bin/python3
-import sys
-import pp_paths
-
-sys.exit(pp_paths.main())
