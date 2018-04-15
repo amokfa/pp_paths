@@ -2,8 +2,8 @@ import curses as cs
 import os
 import sys
 import argparse
-from pp_paths.utils import *
-from pp_paths.Tree import *
+from .utils import *
+from .Tree import *
 
 
 def getIp():
@@ -32,7 +32,7 @@ def main():
     # parser.add_argument('-d', '--dump', action='store_true', help='dump common prefix')
     args=parser.parse_args()
     paths = getIp()
-    trees=Tree('base', paths, args.base)
+    trees=Tree('base', paths, False)
     for tree in trees:
         prettyPrintTree(tree)
 

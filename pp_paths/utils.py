@@ -18,6 +18,8 @@ def getCommonPrefix(paths):
         for p in paths:
             if pole[i] != p[i]:
                 return toPath(pole[:i]), [ p[i:] for p in paths ]
+        if i == len(pole)-1:
+            return toPath(pole), [ p[len(pole):] for p in paths ]
     return None
 
 class CHARS():

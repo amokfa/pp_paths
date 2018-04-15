@@ -1,4 +1,4 @@
-from pp_paths.utils import *
+from .utils import *
 
 class Node(object):
     def __init__(self, data):
@@ -8,13 +8,7 @@ class Node(object):
 
     def __str__(self):
         def strip_empty(l):
-            s=0
-            e=len(l)-1
-            while len(l[s]) == 0:
-                s+=1
-            while len(l[e]) == 0:
-                e-=1
-            return l[s:e+1]
+            return [e for e in l if len(l) > 0]
         if len(self.children) == 0:
             return self.data
         ret=self.data+CHARS.NEW_LINE
@@ -41,18 +35,18 @@ def getDirectChildren(l):
     return directChildren
 
 
-def Tree(name, lst, commonBase=True):
+def Tree(name, lst, recursive=True):
     tpl = getCommonPrefix(lst)
     if tpl and tpl[0] != '':
-        name = tpl[0]
+        name = (name+'/' if recursive else '')+tpl[0]
         lst = tpl[1]
-        commonBase = True
+        recursive = True
     children = list()
     directChildren = getDirectChildren(lst)
     for c in directChildren:
-        n = Tree(c, [e[1:] for e in directChildren[c]], commonBase=True)[0]
+        n = Tree(c, [e[1:] for e in directChildren[c]])[0]
         children.append(n)
-    if commonBase:
+    if recursive:
         ret = Node(name)
         for n in children:
             n.parent = ret
