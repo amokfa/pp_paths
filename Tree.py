@@ -42,7 +42,11 @@ def getDirectChildren(l):
 
 
 def Tree(name, lst, commonBase=True):
-    # base, lst = getCommonPrefix(lst)
+    tpl = getCommonPrefix(lst)
+    if tpl:
+        name = tpl[0]
+        lst = tpl[1]
+        commonBase = True
     children = list()
     directChildren = getDirectChildren(lst)
     for c in directChildren:

@@ -7,12 +7,13 @@ def toPath(lst):
 def getCommonPrefix(paths):
     common=list()
     fst=paths[0]
-    i=0
     for i in range(len(fst)):
         for p in paths[1:]:
+            if fst[i] == p[i] and i == len(fst)-1:
+                return toPath(fst[:i+1]), [ p[i+1:] for p in paths ]
             if fst[i] != p[i]:
-                break
-    return toPath(fst[:i]), [ p[i:] for p in paths ]
+                return toPath(fst[:i]), [ p[i:] for p in paths ]
+    return None
 
 class CHARS():
     PIPE_VERT='│'
