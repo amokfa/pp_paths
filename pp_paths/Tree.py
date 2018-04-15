@@ -1,4 +1,4 @@
-from utils import *
+from .utils import *
 
 class Node(object):
     def __init__(self, data):
