@@ -1,17 +1,18 @@
 from .utils import *
 
 class Node(object):
-    def __init__(self, data):
+    def __init__(self, data, internal=True):
         self.data = data
         self.parent = None
         self.children = Set(lambda a,b: a.data == b.data)
+        self.internal = internal
 
     def __str__(self):
         def strip_empty(l):
             return [e for e in l if len(l) > 0]
         if len(self.children) == 0:
             return self.data
-        ret=self.data+CHARS.NEW_LINE
+        ret=self.data + ('/' if self.internal else '') + CHARS.NEW_LINE
         for c in self.children:
             ch_repr = strip_empty(c.__str__().split(CHARS.NEW_LINE))
            # ret += CHARS.PIPE_VERT+CHARS.NEW_LINE
@@ -35,7 +36,7 @@ def getDirectChildren(l):
     return directChildren
 
 
-def Tree(name, lst, recursive=True, collpasePaths=True):
+def Tree(name, lst, recursive=True, collpasePaths=False, commonBase=False):
     if collpasePaths:
         tpl = getCommonPrefix(lst)
         if tpl and tpl[0] != '':
@@ -47,10 +48,10 @@ def Tree(name, lst, recursive=True, collpasePaths=True):
     for c in directChildren:
         n = Tree(c, [e[1:] for e in directChildren[c]], collpasePaths=collpasePaths)[0]
         children.append(n)
-    if recursive:
-        ret = Node(name)
-        for n in children:
-            n.parent = ret
-            ret.children.add(n)
-        return [ret]
-    return children
+    if not recursive and not commonBase:
+        return children
+    ret = Node(name, internal=len(children) != 0)
+    for n in children:
+        n.parent = ret
+        ret.children.add(n)
+    return [ret]
