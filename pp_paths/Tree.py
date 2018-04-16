@@ -36,8 +36,8 @@ def getDirectChildren(l):
     return directChildren
 
 
-def Tree(name, lst, recursive=True, collpasePaths=False, commonBase=False):
-    if collpasePaths:
+def Tree(name, lst, recursive=True, collapsePaths=False, commonBase=False):
+    if collapsePaths:
         tpl = getCommonPrefix(lst)
         if tpl and tpl[0] != '':
             name = (name+'/' if recursive else '')+tpl[0]
@@ -46,7 +46,7 @@ def Tree(name, lst, recursive=True, collpasePaths=False, commonBase=False):
     children = list()
     directChildren = getDirectChildren(lst)
     for c in directChildren:
-        n = Tree(c, [e[1:] for e in directChildren[c]], collpasePaths=collpasePaths)[0]
+        n = Tree(c, [e[1:] for e in directChildren[c]], collapsePaths=collapsePaths)[0]
         children.append(n)
     if not recursive and not commonBase:
         return children
