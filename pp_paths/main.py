@@ -13,6 +13,8 @@ def getIp():
             ln=input()
             if ln.strip() == '':
                 continue
+            if ln[-1] == '/':
+                ln = ln[:-1]
             dirs=ln.split('/')
             paths.append(dirs)
     except Exception as e:

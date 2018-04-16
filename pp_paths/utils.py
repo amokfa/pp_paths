@@ -11,6 +11,22 @@ def shortestListIn(lists):
             ret = l
     return ret
 
+def collapse(paths):
+    def containedIn(s, l):
+        for i in range(len(s)):
+            if s[i] != l[i]:
+                return False
+        return True
+    ret = list()
+    for i in range(len(paths)):
+        contained=False
+        for r in paths[i+1:]:
+            if len(r) >= len(paths[i]):
+                contained = contained or containedIn(paths[i], r)
+        if not contained:
+            ret.append(paths[i])
+    return ret
+
 def getCommonPrefix(paths):
     common=list()
     pole = shortestListIn(paths)

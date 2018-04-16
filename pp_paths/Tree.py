@@ -38,7 +38,7 @@ def getDirectChildren(l):
 
 def Tree(name, lst, recursive=True, collapsePaths=False, commonBase=False):
     if collapsePaths:
-        tpl = getCommonPrefix(lst)
+        tpl = getCommonPrefix(collapse(lst))
         if tpl and tpl[0] != '':
             name = (name+'/' if recursive else '')+tpl[0]
             lst = tpl[1]

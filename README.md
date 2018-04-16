@@ -106,6 +106,4 @@ pass the paths of files to be printed through `stdin`. They will be printed as a
 
 . Find a better name for common base name(pass a name at cli?)
 
-. -c doesn't collapse directories if they were an external node in ip.
-
 . There are still some formatting bugs
