@@ -35,16 +35,17 @@ def getDirectChildren(l):
     return directChildren
 
 
-def Tree(name, lst, recursive=True):
-    tpl = getCommonPrefix(lst)
-    if tpl and tpl[0] != '':
-        name = (name+'/' if recursive else '')+tpl[0]
-        lst = tpl[1]
-        recursive = True
+def Tree(name, lst, recursive=True, collpasePaths=True):
+    if collpasePaths:
+        tpl = getCommonPrefix(lst)
+        if tpl and tpl[0] != '':
+            name = (name+'/' if recursive else '')+tpl[0]
+            lst = tpl[1]
+            recursive = True
     children = list()
     directChildren = getDirectChildren(lst)
     for c in directChildren:
-        n = Tree(c, [e[1:] for e in directChildren[c]])[0]
+        n = Tree(c, [e[1:] for e in directChildren[c]], collpasePaths=collpasePaths)[0]
         children.append(n)
     if recursive:
         ret = Node(name)

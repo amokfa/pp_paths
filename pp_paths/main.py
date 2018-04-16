@@ -28,11 +28,10 @@ def prettyPrintTree(tree):
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('-b', '--base', action='store_true', help='print with a common base')
-    # parser.add_argument('-d', '--dump', action='store_true', help='dump common prefix')
+    parser.add_argument('-c', '--collapse_paths', action='store_true', help='collapse directory paths')
     args=parser.parse_args()
     paths = getIp()
-    trees=Tree('base', paths, False)
+    trees=Tree('base', paths, recursive=False, collpasePaths=args.collapse_paths)
     for tree in trees:
         prettyPrintTree(tree)
 

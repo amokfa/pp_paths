@@ -2,7 +2,7 @@ def toPath(lst):
     ret = ''
     for p in lst:
         ret += p+'/'
-    return ret
+    return ret[:-1]
 
 def shortestListIn(lists):
     ret=lists[0]
