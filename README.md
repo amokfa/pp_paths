@@ -98,14 +98,14 @@ pass the paths of files to be printed through `stdin`. They will be printed as a
 
 ## TODO:
 
-. An ncurses interface similar to vim folds?
-
-. add some formatting options
+. An ncurses interface similar to vim folds(/making a ranger plugin would be better)
 
 . for some reason, modules don't work properly if loaded from the repl 
 
 . Integrate it with ranger
 
-. Find a better name for common base name(pass a name at cli)
+. Find a better name for common base name(pass a name at cli?)
 
 . -c doesn't collapse directories if they were an external node in ip.
+
+. There are still some formatting bugs
