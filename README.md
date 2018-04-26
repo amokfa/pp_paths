@@ -96,6 +96,32 @@ pass the paths of files to be printed through `stdin`. They will be printed as a
     └─a/
       └─b
 
+You can easily integrate it with other tools which output list of files:
+
+    > pacman -Ql tmux |awk '{print $2}'|pp_paths -c -b
+    /usr/
+    ├─bin/tmux
+    └─share/
+      ├─licenses/tmux/LICENSE
+      └─man/man1/tmux.1.gz
+
+
+    > bsdtar tf ~/Downloads/emacs-for-clojure-book1.zip |pp_paths -c
+    emacs-for-clojure-book1/
+    ├─.gitignore
+    ├─README.md
+    ├─customizations/
+    │ ├─editing.el
+    │ ├─elisp-editing.el
+    │ ├─misc.el
+    │ ├─navigation.el
+    │ ├─setup-clojure.el
+    │ ├─setup-js.el
+    │ ├─shell-integration.el
+    │ └─ui.el
+    │
+    ...
+
 ## TODO:
 
 . An ncurses interface similar to vim folds(/making a ranger plugin would be better)
