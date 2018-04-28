@@ -5,6 +5,8 @@ def toPath(lst):
     return ret[:-1]
 
 def shortestListIn(lists):
+    if lists == []:
+        return []
     ret=lists[0]
     for l in lists[1:]:
         if len(l) < len(ret):
@@ -18,12 +20,8 @@ def collapse(paths):
                 return False
         return True
     ret = list()
-    for i in range(len(paths)):
-        contained=False
-        for r in paths[i+1:]:
-            if len(r) >= len(paths[i]):
-                contained = contained or containedIn(paths[i], r)
-        if not contained:
+    for i in range(len(paths)-1):
+        if not containedIn(paths[i], paths[i+1]):
             ret.append(paths[i])
     return ret
 

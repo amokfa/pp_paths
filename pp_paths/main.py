@@ -13,12 +13,15 @@ def getIp():
             ln=input()
             if ln.strip() == '':
                 continue
-            if ln[-1] == '/':
-                ln = ln[:-1]
-            dirs=ln.split('/')
-            paths.append(dirs)
+            paths.append(ln)
     except Exception as e:
         pass
+    paths.sort()
+    for i in range(len(paths)):
+        if paths[i][-1] == '/':
+            paths[i] = paths[i][:-1]
+        dirs=paths[i].split('/')
+        paths[i] = dirs
     return paths
 
 def runUi(tree):
