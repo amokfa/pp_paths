@@ -5,8 +5,6 @@ def toPath(lst):
     return ret[:-1]
 
 def shortestListIn(lists):
-    if lists == []:
-        return []
     ret=lists[0]
     for l in lists[1:]:
         if len(l) < len(ret):
@@ -26,6 +24,8 @@ def collapse(paths):
     return ret
 
 def getCommonPrefix(paths):
+    if len(paths) == 0:
+        return None
     common=list()
     pole = shortestListIn(paths)
     for i in range(len(pole)):
