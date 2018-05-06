@@ -21,6 +21,7 @@ def collapse(paths):
     for i in range(len(paths)-1):
         if not containedIn(paths[i], paths[i+1]):
             ret.append(paths[i])
+    ret.append(paths[-1])
     return ret
 
 def getCommonPrefix(paths):
