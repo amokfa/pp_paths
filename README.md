@@ -131,5 +131,3 @@ You can easily integrate it with other tools which output list of files:
 . Integrate it with ranger
 
 . Find a better name for common base name(pass a name at cli?)
-
-. There are still some formatting bugs

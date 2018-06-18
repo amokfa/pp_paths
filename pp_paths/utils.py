@@ -39,10 +39,10 @@ def getCommonPrefix(paths):
 
 class CHARS():
     PIPE_VERT='│'
-    T_MID='├'
+    T_MID=    '├'
+    T_END=    '└'
     PIPE_HORIZ='─'
     NEW_LINE='\n'
-    T_END='└'
 
 class Set(object):
     def __init__(self, f):
