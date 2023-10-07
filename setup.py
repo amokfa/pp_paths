@@ -10,6 +10,7 @@ def main():
         url='https://github.com/amokfa/pp_paths',
         description='A python program to pretty print directory structures',
         long_description=open('README.md').read(),
+        long_description_content_type='text/markdown',
         packages=find_packages(),
         entry_points={
             'console_scripts': ['pp_paths = pp_paths.main:main']
