@@ -14,7 +14,7 @@ class Node(object):
             return self.data
         ret=self.data + ('/' if self.internal else '') + CHARS.NEW_LINE
         for c in self.children:
-            ch_repr = strip_empty(c.__str__().split(CHARS.NEW_LINE))
+            ch_repr = strip_empty(c.__str__().strip().split(CHARS.NEW_LINE))
            # ret += CHARS.PIPE_VERT+CHARS.NEW_LINE
             ret += CHARS.T_END if c == self.children[-1] else CHARS.T_MID
             ret += CHARS.PIPE_HORIZ\

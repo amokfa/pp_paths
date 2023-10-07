@@ -1,7 +1,5 @@
 # `pp_paths`: A python script to pretty print directory structures
 
-
-
 pass the paths of files to be printed through `stdin`. They will be printed as a tree using ascii art.
 
 
@@ -23,18 +21,12 @@ pass the paths of files to be printed through `stdin`. They will be printed as a
     │       ├─1
     │       ├─2
     │       └─3
-    │
-    │
-    │
-    │
     ├─s
     ├─b/
     │ ├─w/
     │ │ └─a
-    │ │
     │ ├─q
     │ └─x
-    │
     ├─r
     └─q/
       ├─e
@@ -47,13 +39,11 @@ pass the paths of files to be printed through `stdin`. They will be printed as a
     │ ├─1
     │ ├─2
     │ └─3
-    │
     ├─s
     ├─b/
     │ ├─w/a
     │ ├─q
     │ └─x
-    │
     ├─r
     └─q/
       ├─e
@@ -65,12 +55,8 @@ pass the paths of files to be printed through `stdin`. They will be printed as a
     │ └─b/
     │   └─c/
     │     └─d
-    │
-    │
-    │
     ├─b/
     │ └─w
-    │
     ├─z
     └─q
     
@@ -86,15 +72,11 @@ pass the paths of files to be printed through `stdin`. They will be printed as a
     │ │ └─b/
     │ │   └─c/
     │ │     └─d
-    │ │
-    │ │
-    │ │
     │ ├─b/
     │ │ └─w
     │ │
     │ ├─z
     │ └─q
-    │
     └─a/
       └─b
 
@@ -123,13 +105,3 @@ You can easily integrate it with other tools which output list of files:
     │ └─ui.el
     │
     ...
-
-## TODO:
-
-. An ncurses interface similar to vim folds(/making a ranger plugin would be better)
-
-. for some reason, modules don't work properly if loaded from the repl 
-
-. Integrate it with ranger
-
-. Find a better name for common base name(pass a name at cli?)
