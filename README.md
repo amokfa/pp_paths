@@ -2,6 +2,9 @@
 
 pass the paths of files to be printed through `stdin`. They will be printed as a tree using ascii art.
 
+# Installation
+
+    pip install pp_paths --user
 
 > pp_paths [-c] [-b]
 
